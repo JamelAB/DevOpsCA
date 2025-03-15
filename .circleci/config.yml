@@ -1,4 +1,4 @@
-# Jamels CircleCI configuration file
+# Jamels CircleCI configuration file for CA
 version: 2.1
 
 workflows:
