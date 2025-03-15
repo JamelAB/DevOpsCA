@@ -26,10 +26,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-nvm
-          command: |
-            nvm install 20.17.0
-            nvm use 20.17.0
+          name: verify nvm
+          command: node -v && npm -v
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
