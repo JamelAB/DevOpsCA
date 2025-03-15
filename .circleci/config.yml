@@ -22,8 +22,8 @@ jobs:
   build:
     working_directory: ~/SimpleApplication
     docker:
-     - image: cimg/node:20.17
-     steps:
+        - image: cimg/node:20.17
+    steps:
       - checkout
       - run:
           name: update-nvm
