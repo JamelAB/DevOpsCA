@@ -22,11 +22,13 @@ jobs:
   build:
     working_directory: ~/SimpleApplication
     docker:
-        - image: circleci/node:20.17
+     - image: cimg/node:20.17
+     steps:
       - checkout
       - run:
           name: update-nvm
-          command: nvm install 20.17.0 
+          command: |
+            nvm install 20.17.0
             nvm use 20.17.0
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
@@ -39,7 +41,7 @@ jobs:
             - ./node_modules
   deploy:
     docker:
-        - image: circleci/node:20.17
+        - image: cimg/node:20.17
     steps:
       - run:
           name: deploy-application
