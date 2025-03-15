@@ -22,7 +22,7 @@ jobs:
   build:
     working_directory: ~/SimpleApplication
     docker:
-        - image: circleci/node:23.10.0
+        - image: circleci/node:latest
     steps:
       - checkout
       - run:
@@ -39,7 +39,7 @@ jobs:
             - ./node_modules
   deploy:
     docker:
-        - image: circleci/node:23.10.0
+        - image: circleci/node:latest
     steps:
       - run:
           name: deploy-application
